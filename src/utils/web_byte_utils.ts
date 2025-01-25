@@ -52,7 +52,6 @@ const webRandomBytes: (byteLength: number) => Uint8Array = (() => {
   };
   if (crypto != null && typeof crypto.getRandomValues === 'function') {
     return (byteLength: number) => {
-      // @ts-expect-error: crypto.getRandomValues cannot actually be null here
       // You cannot separate getRandomValues from crypto (need to have this === crypto)
       return crypto.getRandomValues(webByteUtils.allocate(byteLength));
     };
