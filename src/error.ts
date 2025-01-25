@@ -1,5 +1,4 @@
 import { BSON_MAJOR_VERSION } from './constants';
-
 /**
  * @public
  * @category Error
@@ -24,7 +23,7 @@ export class BSONError extends Error {
   }
 
   constructor(message: string, options?: { cause?: unknown }) {
-    super(message, options);
+    super(message);
   }
 
   /**
